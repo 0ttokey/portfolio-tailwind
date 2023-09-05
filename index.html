@@ -11,6 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+<!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+    </script>
 </head>
 <body>
 
@@ -23,12 +36,12 @@
                 </div>
                 <div class="flex items-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-                        <span class="hamburger-line origin-top-left"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line origin-bottom-left"></span>
+                        <span class="hamburger-line dark:bg-white origin-top-left"></span>
+                        <span class="hamburger-line dark:bg-white"></span>
+                        <span class="hamburger-line dark:bg-white origin-bottom-left"></span>
                     </button>
 
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white dark:bg-dark dark:shadow-slate-500 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
                         <ul class="block lg:flex">
                             <li class="group"><a class="nav-links" href="#home">Home</a></li>
                             <li class="group"><a class="nav-links" href="#about">About Me</a></li>
@@ -36,6 +49,17 @@
                             <li class="group"><a class="nav-links" href="#skills">My Skills</a></li>
                             <li class="group"><a class="nav-links" href="#blog">Blog</a></li>
                             <li class="group"><a class="nav-links" href="#contact">Contact</a></li>
+                            <li>
+                                <div class="flex">
+                                    <input type="checkbox" id="dark-toggle" class="py-2 mx-8 hidden">
+                                    <label for="dark-toggle" class="mx-8 cursor-pointer lg:scale-[.85]">
+                                        <div class="rounded-full w-16 h-8 sm:w-20 sm:h-10 bg-100 bg-slate-100 dark:bg-slate-600 flex items-center justify-between">
+                                            <div class="rounded-full w-8  h-8 sm:w-9 sm:h-9 bg-slate-900 dark:bg-slate-100 flex justify-center items-center dark:bg-transparent" id="toggle-light"><span class="text-slate-100 font-bold text-sm sm:text-base"><i class="bi bi-brightness-high invisible dark:visible absolute"></i><i class="bi bi-brightness-high-fill dark:invisible"></i></span></div>
+                                            <div class="rounded-full w-8 h-8 sm:w-9 sm:h-9 dark:bg-slate-100 flex justify-center items-center bg-transparent" id="toggle-dark"><span class="text-slate-900 font-bold text-sm sm:text-base"><i class="bi bi-moon-stars dark:invisible absolute"></i><i class="bi bi-moon-stars-fill invisible dark:visible"></i></span></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -45,19 +69,19 @@
     <!-- Header -- Akhir! -->
 
     <!-- Hero -- Mulai! -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl">Hello Everyone!, Iam <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Daffa Raihan Syafiki</span></h1>
-                    <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student | <span class="text-dark">SMPITRR</span></h2>
+                    <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl">Hello Everyone!, Iam <span class="block font-bold text-dark dark:text-white text-4xl mt-1 lg:text-5xl">Daffa Raihan Syafiki</span></h1>
+                    <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student | <span class="text-dark dark:text-white">SMPITRR</span></h2>
                     <p class="font-medium text-secondary mb-10 leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, cum.</p>
                     <a class="btn-primary" href="#">Contact Me</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2 lg:mt-0 lg:right-0">
                     <div class="relative mt-10">
-                        <img class="max-w-full mx-auto" src="./src/img/Maxpark.png" alt="Drs. Ottokey">
-                        <span class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2">
+                        <img class="relative max-w-full mx-auto z-10" src="./src/img/Maxpark.png" alt="Drs. Ottokey">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2">
                             <svg width="400" height="345" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#4f46e5" d="M46.3,-57.2C59.2,-44.4,68.2,-29,71.1,-12.5C74,3.9,70.7,21.5,63,37.7C55.2,54,42.9,69.1,26.9,75.7C10.9,82.3,-8.9,80.4,-26.1,73.4C-43.4,66.4,-58.1,54.2,-63.9,39.3C-69.7,24.3,-66.5,6.6,-62.4,-10C-58.3,-26.6,-53.2,-41.9,-42.6,-55.2C-32.1,-68.4,-16,-79.5,0.3,-79.9C16.7,-80.3,33.4,-70,46.3,-57.2Z" transform="translate(100 100) scale(1.1)" />
                               </svg>
@@ -70,16 +94,16 @@
     <!-- Hero -- Akhir! -->
 
     <!-- About -- Mulai! -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3">About Me</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Eat-Sleep-Code<br>Repeat.</h2>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl mb-5 max-w-md lg:text-4xl">Eat-Sleep-Code<br>Repeat.</h2>
                     <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi consectetur earum illo quo unde nobis alias!</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-2xl text-dark mb-4 lg:text-4xl lg:pt-10">Let's Be Friend</h3>
+                    <h3 class="font-semibold text-2xl text-dark dark:text-white mb-4 lg:text-4xl lg:pt-10">Let's Be Friend</h3>
                     <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sequi. Magni, perspiciatis quia vero natus maxime aperiam nobis hic consequatur?</p>
                     <div class="flex items-center">
                         <a href="https://github.com/0ttokey" target="_blank" class="text-3xl w-9 h-9 text-slate-300 flex justify-center items-center border border-slate-300 rounded-full mr-3 hover:border-primary hover:bg-primary hover:text-white"><i data-feather="github"></i></a>
@@ -92,12 +116,12 @@
     <!-- About -- Akhir! -->
 
     <!-- Plan -- Mulai! -->
-    <section id="plan" class="pt-36 pb-16 bg-slate-100">
+    <section id="plan" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">My Plan</h4>
-                    <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl mb-4">Study Plan</h2>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Study Plan</h2>
                     <p class="font-medium text-md md:text-lg text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor molestias fuga sed eaque architecto rerum magni illum officia commodi deserunt!</p>
                 </div>
 
@@ -106,28 +130,28 @@
                         <div class="rounded-md shadow-md overflow-hidden">
                             <img src="./src/img/plan/js.jpg" alt="Javascript" width="w-full">
                         </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 m-3">Javascript</h3>
+                        <h3 class="font-semibold text-xl text-dark dark:text-white mt-5 m-3">Javascript</h3>
                         <p class="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptate omnis quam.</p>
                     </div>
                     <div class="mb-12 p-4 md:w-2/5">
                         <div class="rounded-md shadow-md overflow-hidden">
                             <img src="./src/img/plan/php.png" alt="PHP" width="w-full">
                         </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 m-3">PHP</h3>
+                        <h3 class="font-semibold text-xl text-dark dark:text-white mt-5 m-3">PHP</h3>
                         <p class="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptate omnis quam.</p>
                     </div>
                     <div class="mb-12 p-4 md:w-2/5">
                         <div class="rounded-md shadow-md overflow-hidden">
                             <img src="./src/img/plan/react.jpg" alt="React" width="w-full">
                         </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 m-3">React</h3>
+                        <h3 class="font-semibold text-xl text-dark dark:text-white mt-5 m-3">React</h3>
                         <p class="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptate omnis quam.</p>
                     </div>
                     <div class="mb-12 p-4 md:w-2/5">
                         <div class="rounded-md shadow-md overflow-hidden bg-white">
                             <img src="./src/img/plan/laravel.png" alt="Laravel" width="w-full">
                         </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 m-3">Laravel</h3>
+                        <h3 class="font-semibold text-xl text-dark dark:text-white mt-5 m-3">Laravel</h3>
                         <p class="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptate omnis quam.</p>
                     </div>
                 </div>
@@ -137,12 +161,12 @@
     <!-- Plan -- Akhir! -->
 
     <!-- Skills -- Mulai! -->
-    <section id="skills" class="pt-36 pb-32 bg-slate-700">
+    <section id="skills" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-300">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Skills</h4>
-                    <h2 class="font-bold text-white text-3xl sm:text-4xl lg:text-5xl mb-4">My Skills</h2>
+                    <h2 class="font-bold text-white dark:text-dark text-3xl sm:text-4xl lg:text-5xl mb-4">My Skills</h2>
                     <p class="font-medium text-md md:text-lg text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquam obcaecati omnis!</p>
                 </div>
             </div>
@@ -176,48 +200,48 @@
     <!-- Skills -- Akhir! -->
 
     <!-- Blog -- Mulai! -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
-                    <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl mb-4">Latest Posts</h2>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Latest Posts</h2>
                     <p class="font-medium text-md md:text-lg text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam omnis vitae aut?</p>
                 </div>
             </div>
 
             <div class="flex flex-wrap">
-                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="bg-white shadow-lg rounded-xl border overflow-hidden mb-10 object-cover">
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
+                    <div class="bg-white dark:bg-slate-800 shadow-lg rounded-xl border dark:border-0 overflow-hidden mb-10 object-cover">
                         <div class="w-full overflow-hidden">
                             <img src="https://source.unsplash.com/360x200?rubiks" class="w-full hover:scale-110 transition duration-500 ease-linear" alt="Rubik's Cube">
                         </div>
                         <div class="py-8 px-6">
-                            <h3 class="text-dark font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New 3X3 World Record!</a></h3>
+                            <h3 class="text-dark dark:text-white font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New 3X3 World Record!</a></h3>
                             <p class="mb-7 text-base text-secondary font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, nesciunt?</p>
                             <a href="" class="btn-primary py-2 px-4">Read more</a>
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="bg-white shadow-lg rounded-xl border overflow-hidden mb-10 object-cover">
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
+                    <div class="bg-white dark:bg-slate-800 shadow-lg rounded-xl border dark:border-0 overflow-hidden mb-10 object-cover">
                         <div class="w-full overflow-hidden">
                             <img src="https://source.unsplash.com/360x200?coding" class="w-full hover:scale-110 transition duration-500 ease-linear" alt="Coding">
                         </div>
                         <div class="py-8 px-6">
-                            <h3 class="text-dark font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New Programming Language!</a></h3>
+                            <h3 class="text-dark dark:text-white font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New Programming Language!</a></h3>
                             <p class="mb-7 text-base text-secondary font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, consequatur!</p>
                             <a href="" class="btn-primary py-2 px-4">Read more</a>
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="bg-white shadow-lg rounded-xl border overflow-hidden mb-10 object-cover">
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
+                    <div class="bg-white dark:bg-slate-800 shadow-lg rounded-xl border dark:border-0 overflow-hidden mb-10 object-cover">
                         <div class="w-full overflow-hidden">
                             <img src="https://source.unsplash.com/360x200?worldmap" class="w-full hover:scale-110 transition duration-500 ease-linear" alt="Map">
                         </div>
                         <div class="py-8 px-6">
-                            <h3 class="text-dark font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New Country!</a></h3>
+                            <h3 class="text-dark dark:text-white font-bold text-xl mb-2 hover:text-primary truncate"><a href="#">New Country!</a></h3>
                             <p class="mb-7 text-base text-secondary font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, totam!</p>
                             <a href="" class="btn-primary py-2 px-4">Read more</a>
                         </div>
@@ -229,12 +253,12 @@
     <!-- Blog -- Akhir! -->
 
     <!-- Contact -- Mulai! -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-                    <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl mb-4">Contact Me</h2>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Contact Me</h2>
                     <p class="font-medium text-md md:text-lg text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
 
@@ -303,6 +327,12 @@
         </div>
     </footer>
     <!-- Footer -- Akhir! -->
+
+    <!-- Back To Top -- Mulai! -->
+    <a href="#home" id="to-top" class="flex hover:animate-pulse invisible justify-center items-center fixed bottom-4 right-4 h-14 w-14 bg-primary rounded-full">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- Back To Top -- Akhir! -->
 
 <!-- MyJavaScript -->
     <script src="./src/js/script.js"></script>
